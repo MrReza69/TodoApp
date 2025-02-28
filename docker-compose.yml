@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www/html
+    environment:
+      - APP_ENV=local
+      - DB_CONNECTION=sqlite
+      - DB_DATABASE="db.sqlite"
